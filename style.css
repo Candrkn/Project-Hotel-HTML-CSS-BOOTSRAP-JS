@@ -1,0 +1,498 @@
+/* ! Genel Tanimlar */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+
+:root{
+    --primary-color : #021832;
+    --secondary-color : #caa169;
+    --bg-color : #f4f4f4;
+    --bg-white : #fff;
+    --bg-black : #000;
+
+    --primary-font : "Poppins", sans-serif;
+    --primary-text : #021832;
+    --secondary-text : #caa169;
+    --text-white : #fff;
+    --text-black : #000;
+    --text-gray : #f4f4f4;
+}
+
+
+body{
+    background-color: var(--bg-white);
+    font-family: var(--primary-font);
+}
+
+h1{
+    font-size: 70px;
+    font-weight: 700;
+}
+
+/* ! Scrollbar Settings */
+/* Thickness */
+::-webkit-scrollbar{
+    width: 0.500rem;
+}
+
+/* Background color */
+::-webkit-scrollbar-track{
+    background-color: var(--secondary-color);
+}
+
+/* Scroolbar thumb */
+::-webkit-scrollbar-thumb{
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+/* ! Navbar CSS */
+
+.active{
+    color: var(--secondary-color) !important;
+}
+
+.main-btn{
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: transparent;
+    border: 0.0625rem solid var(--primary-color);
+    padding: 0.175rem 1rem;
+    border-radius: 3.125rem;
+    transition: 0.3s all ease-in-out;
+}
+
+.main-btn:hover{
+    background-color: var(--primary-color);
+    border-color: var(--secondary-color);
+}
+
+.main-btn a{
+    color: var(--primary-text);
+}
+
+.main-btn:hover a{
+    color: var(--secondary-text);
+}
+
+.header-wrapper .navbar{
+    background-color: var(--bg-white);
+    box-shadow: 0.5rem 0.375rem 0.375rem rgb(0 0 0 / 40%);
+}
+
+.header-wrapper .nav-item .nav-link{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-text);
+}
+
+.header-wrapper .nav-item .nav-link:hover{
+    color: var(--secondary-text);
+}
+
+.navbar.header-scrolled{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: rgb(255,255,255,0.85);
+    animation: 0.5s ease-in-out 0s fadeInDown;
+}
+
+@keyframes fadeInDown{
+    0%{
+        top: -80%;
+    }
+    50%{
+        top:-40%;
+    }
+    100%{
+        top:0
+    }
+}
+
+/* ! Mainpage Banner CSS */
+.banner-wrapper{
+    height: 53.325rem;
+}
+
+.banner-wrapper .swiper{
+    width: 100%;
+    height: 90%;
+}
+
+.banner-wrapper .swiper-slide{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.banner-wrapper .swiper-pagination-bullets .swiper-pagination-bullet{
+    width: 0.9375rem;
+    height: 0.9375rem;
+    background-color: var(--secondary-color);
+    border: 0.0625rem solid var(--bg-white);
+}
+
+.swiper-slide .letter-spacing{
+    letter-spacing: 2px;
+    font-style: italic;
+    text-shadow: 2px 2px 2px var(--secondary-color);
+    font-family: var(--primary-font);
+}
+
+/* ! Reservation Section (Booking Area) */
+.margin{
+    margin: -4rem 0;
+    position: relative;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg-white);
+    box-shadow: 0 0.625rem 0.925rem rgb(0,0,0,0.40);
+}
+
+/* ! About Us Section */
+.my-6{
+    margin-top: 100px;
+}
+
+h3{
+    font-weight: 700;
+}
+
+#hakkimizda p{
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+h3 span{
+    color: var(--secondary-text);
+}
+
+#hakkimizda .btn{
+    color: var(--primary-text);
+}
+
+#hakkimizda .btn:hover{
+    color: var(--primary-color);
+}
+
+/* ! Favorite Rooms */
+
+#odalar h2 span{
+    color: var(--secondary-text);
+}
+.room-items{
+    position: relative;
+    overflow: hidden;
+}
+
+.room-items img{
+    transition: all 0.5s ease;
+}
+
+.room-items .room-photo{
+    border: 3px solid var(--secondary-color);
+}
+
+.room-items:hover img{
+    transform: scale(1.2);
+}
+
+.room-items::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.4s ease-in;
+}
+
+.room-items:hover::before{
+    opacity: 0.6;
+}
+
+.room-item-wrap{
+    position: absolute;
+    left: 1.875rem;
+    right: 1.875rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.room-items .room-content{
+    border: 1px solid var(--bg-white);
+    padding: 5rem 1.875rem;
+    transition: all 0.5s ease-in;
+    opacity: 0;
+    transform: scale3d(1.2,1.2,1.2);
+}
+
+.room-items:hover .room-content{
+    opacity: 1;
+    transform: scale3d(1,1,1);
+}
+
+.btn{
+    color: var(--secondary-text);
+    border: 1px solid var(--secondary-color);
+}
+
+.btn:hover{
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+/* ! Services Section */
+
+#servislerimiz h2 span{
+    color: var(--secondary-text);
+}
+
+.bg-gray{
+    background-color: #f4f4f4;
+}
+
+.col-lg-5{
+    padding: 2rem 0.5rem;
+}
+
+.service-menu-area p span{
+    color: var(--secondary-text);
+}
+
+
+
+.service-menu-area .nav-item{
+    margin-bottom: 2.5rem;
+}
+
+.service-menu-area ul li h5 span{
+    color: var(--secondary-text);
+}
+
+.service-icon{
+    width: 5.625rem;
+    height: 5.625rem;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    float: left;
+    transition: all 0.3s ease-in-out;
+}
+
+.service-icon:hover, .service-menu-area ul li a.active .service-icon{
+    background-color: var(--primary-color);
+}
+
+.service-menu-area ul li:nth-child(1){
+    margin-left: -0.375rem;
+}
+
+.service-menu-area ul li:nth-child(2){
+    margin-left: -2.9375rem;
+}
+
+.service-menu-area ul li:nth-child(3){
+    margin-left: -5.375rem;
+}
+
+.service-menu-area ul li:nth-child(4){
+    margin-left: -7.8125rem;
+}
+
+/* ! Counter Section */
+
+.counter{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.664),rgba(0, 0, 0, 0.411)), url(img/counter-bg.webp);
+    padding: 3.5rem;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.counter h3{
+    color: var(--bg-white);
+}
+
+.counter p{
+    font-weight: lighter;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+/* ! Team Content */
+
+.card{
+    position: relative;
+    overflow: hidden;
+}
+
+.team-info{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--secondary-text);
+    padding-top: 1.2rem 0;
+    margin-bottom: -4rem;
+    transition: 0.4s all ease-in-out;
+}
+
+.team-info h5,
+.team-info p{
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.card:hover .team-info{
+    margin-bottom: 0;
+}
+
+.team-info p{
+    font-style: italic;
+}
+
+.team-info .social-network{
+    background-color: var(--primary-color);
+    padding: 1rem !important;
+}
+
+.team-info .social-network li a{
+    text-decoration: none;
+}
+.team-info .social-network li a i{
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.team-info .social-network li a i:hover{
+    color: var(--secondary-text);
+    border: 1px solid var(--secondary-color);
+}
+
+/* ! Galerry Section */
+
+.gallery-wrapper .gallery-item{
+    position: relative;
+}
+
+.gallery-wrapper .gallery-item::before,
+.gallery-wrapper .gallery-item::after,
+.gallery-wrapper .gallery-item-content::before,
+.gallery-wrapper .gallery-item-content::after{
+    content: "";
+    width: 50%;
+    height: 50%;
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease, left 0.5s ease, top 0.5s ease;
+}
+
+.gallery-wrapper .gallery-item::after{
+    top: 50%;
+}
+
+.gallery-wrapper .gallery-item:hover::after{
+    top: 0;
+    opacity: 1;
+}
+
+.gallery-wrapper .gallery-item:hover::before{
+    left: 50%;
+    opacity: 1;
+}
+
+.gallery-wrapper .gallery-item-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.gallery-wrapper .gallery-item:hover .gallery-item-content{
+    opacity: 1;
+
+}
+
+.gallery-wrapper .gallery-item-content::before{
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+}
+
+.gallery-wrapper .gallery-item-content::after{
+    top: 50%;
+    left: 50%;
+}
+
+.gallery-wrapper .gallery-item:hover .gallery-item-content::after{
+    left: 0;
+    opacity: 1;
+}
+
+/* ! Blog Section */
+
+.pricing-card{
+    box-shadow: 0.250rem 0.250rem .250rem var(--secondary-color);
+    color: var(--secondary-text);
+}
+
+.pricing-card:hover{
+    color: var(--primary-text);
+}
+
+.signup-btn{
+    width: 70%;
+    margin: auto;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transition: 0.3s all ease-in-out;
+}
+
+.signup-btn:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.blog-content{
+    position: absolute;
+    right: 11px;
+    margin-top: -6rem;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 0.125rem 0.125rem 0.125rem gray;
+}
+
+.w-85{
+    width: 85%;
+}
