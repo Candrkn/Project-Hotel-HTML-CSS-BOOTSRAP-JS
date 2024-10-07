@@ -34,6 +34,10 @@ h1{
     font-weight: 700;
 }
 
+.mt-6{
+    margin-top: 200px;
+}
+
 /* ! Scrollbar Settings */
 /* Thickness */
 ::-webkit-scrollbar{
@@ -495,4 +499,109 @@ h3 span{
 
 .w-85{
     width: 85%;
+}
+
+/* ! Footer Section */
+
+.labes a{
+    transition: 0.3s all ease-in;
+}
+
+.labels a:hover{
+    color: var(--secondary-color) !important;
+    margin-left: 10px;
+}
+
+.outline{
+    border: 1px solid white;
+}
+
+.outline:focus{
+    border: 1px solid var(--secondary-color);
+}
+
+.outline::placeholder{
+    color: #6C757D;
+}
+
+.labelss li{
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+}
+
+.labelss li a i{
+    color: var(--primary-color);
+}
+
+
+/* ! Responsive Tasarim */
+
+@media screen and (max-width:992px){
+    #hakkimizda{
+        margin-top: 200px;
+    }
+
+    #hakkimizda img{
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width:768px){
+    #hakkimizda{
+        margin-top: 300px;
+    }
+}
+@media screen and (max-width:475px){
+    #hakkimizda img{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:992px){
+    
+    .service-menu-area ul li:nth-child(1){
+        margin-top: 20px;
+        margin-left: 0rem;
+    }
+    
+    .service-menu-area ul li:nth-child(2){
+        margin-left: 0rem;
+    }
+    
+    .service-menu-area ul li:nth-child(3){
+        margin-left: 0rem;
+    }
+    
+    .service-menu-area ul li:nth-child(4){
+        margin-left: 0rem;
+    }
+}
+
+@media screen and (max-width:756px){
+    .footer-center{
+        text-align: center;
+    }
+    .footer-center .asd{
+        margin: 0 !important;
+    }
+
+    .footer-center .btn{
+        margin: auto;
+    }
+
+    .footer-center ul li{
+        margin: auto;
+    }
+}
+
+@media screen and (max-width:764px){
+    #galeri img{
+        max-width: 100%;
+    }
 }
